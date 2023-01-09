@@ -68,7 +68,7 @@ Route::name('auth.')->controller(UserController::class)->group(function () {
     Route::post('login', 'login')->name('login');
     Route::post('register', 'register')->name('register');
 
-    Route::middleware('auth.sanctum')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', 'logout')->name('logout');
         Route::get('user', 'fetch')->name('fetch');
     });
